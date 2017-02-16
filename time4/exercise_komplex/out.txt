@@ -1,0 +1,6 @@
+z = (4, -2)
+q = (2, 3)
+z_plus_q = (6, 1)
+z_minus_q = (2, -5)
+z_compl_conj = (4, 2)
+z_abs = 4.47214

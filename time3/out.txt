@@ -1,0 +1,40 @@
+This is your result: 3
+false
+i = 0, n = 3
+i = 1, n = 4
+i = 2, n = 5
+i = 3, n = 6
+i = 4, n = 7
+i = 5, n = 8
+i = 6, n = 9
+i = 7, n = 10
+i = 8, n = 11
+i = 9, n = 12
+return value of ex_1 is 5
+Output from exercise 6:  13
+Output from exercise 7: 2 1
+0 is false
+7 is true
+The value of n is 1
+The value of n is 2
+The value of n is 3
+The value of n is 4
+The value of n is 5
+The value of n is 6
+The value of n is 7
+The value of n is 8
+The value of n is 9
+The value of n is 10
+We broke out of the while-loop
+print this statement at least once
+Value n=0 in this loop.
+Value n=1 in this loop.
+Value n=2 in this loop.
+Value n=3 in this loop.
+Value n=4 in this loop.
+Value n=5 in this loop.
+Value n=6 in this loop.
+Value n=7 in this loop.
+Value n=8 in this loop.
+Value n=9 in this loop.
+Value n=10 in this loop.
