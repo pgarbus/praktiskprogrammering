@@ -1,0 +1,12 @@
+Float: Machine Epsilon =	 1.19209e-07
+System FLT_EPSILON = 		 1.19209e-07
+Double: Machine Epsilon=	 2.22045e-16
+System DBL_EPSILON = 		 2.22045e-16
+Long double: Machine epsilon =	 1.0842e-19
+System LDBL_EPSILON = 		 1.0842e-19
+limit of sum_up_float with 	max 21474836 is 17.4596.
+Limit of sum_down_float with 	max 21474836 is 17.4596.
+long float of tau = 1e-06
+c=-0.7 d=0.7 e=2.7 d/e=0.259259 d/e < epsilon/2 = 0
+d/e=0.259259 d/e < epsilon/2=0
+answer from equal function = 0

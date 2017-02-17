@@ -3,38 +3,46 @@
 #include <float.h>
 #include <math.h>
 #define TINY 1e-6
+int epsilon_float();
+void calc_int_max();
+void calc_int_min();
+void epsilon_double();
+void epsilon_longdouble();
+int sum_up_float();
+int sum_down_float();
+int equal();
+
+
+
 int main(int argc, char const *argv[])
 {
 	// exercise 1
-	/*calc_int_max();
-	calc_int_min();
+	// calc_int_max(); // do not call, take a long time to process
+	// calc_int_min(); // do not call, take a long time to process.
 	epsilon_float();
 	epsilon_double();
 	epsilon_longdouble();
-	*/
+	
 
 	// exercise 2 // result does not make sense... no difference.
-	/*
-	*/
 	int max = INT_MAX/100;
 	sum_up_float(max);
-	sum_down_float(max); // returns an error if func 
-						// is defined as double (as it returns...)
+	sum_down_float(max);
 	
 	
 	// exercise 3
 	double a = 1.0, b = 1.7, tau = TINY, epsilon = TINY; 
-	printf("lg %lg\n", tau);
+	printf("long float of tau = %lg\n", tau);
 	int answer = equal(a,b,tau,epsilon); 
 	printf("answer from equal function = %i\n", answer);
 	return 0;
 }
 int equal(double a, double b, double tau, double epsilon){
-	double c = a-b; double d = labs(a-b); double e = labs(a)+labs(b);
-	printf("%lg %lg %lg %lg %i\n",c, d, e, d/e, d/e < epsilon/2);
+	double c = a-b; double d = fabs(a-b); double e = fabs(a)+fabs(b);
+	printf("c=%lg d=%lg e=%lg d/e=%lg d/e < epsilon/2 = %i\n",c, d, e, d/e, d/e < epsilon/2);
 	int boolean = (d/e < epsilon/2);
-	printf("%lg %i\n", d/e, boolean);
-	if ((double)labs(a-b) < tau) {printf("should not print tau\n");return 1;}
+	printf("d/e=%lg d/e < epsilon/2=%i\n", d/e, boolean);
+	if ((double)fabs(a-b) < tau) {printf("should not print tau\n");return 1;}
 	if (0) {printf("should not print epsilon\n"); return 1;}
 	else {return 0;}
 }
@@ -72,12 +80,13 @@ void epsilon_double(){
 	printf("Double: Machine Epsilon=\t %lg\n", i);
 	printf("System DBL_EPSILON = \t\t %lg\n", DBL_EPSILON);
 }
-void epsilon_float(){
+int epsilon_float(){
 	float i = 1;
 	while(1+i != 1){i/=2;}
 	i*=2;
 	printf("Float: Machine Epsilon =\t %g\n",i);
 	printf("System FLT_EPSILON = \t\t %g\n", FLT_EPSILON);
+	return 0;
 }
 void calc_int_max(){
 	printf("the system-defined INT_MAX is\t\t %i\n", INT_MAX);
@@ -91,6 +100,7 @@ void calc_int_max(){
 		++i;
 	} while (i+1>i);
 	printf("do-loop: the largest value of i =\t %i\n", i);
+	// return 0;
 }
 void calc_int_min(){
 	printf("The system smallest value is\t\t %i\n", INT_MIN);
@@ -105,5 +115,4 @@ void calc_int_min(){
 		--i;
 	} while (i-1<i);
 	printf("Do-loop: The smallest value of i =\t %i\n", i);
-	
 }
