@@ -1,0 +1,14 @@
+Main.c is running just fine.
+printing v before setting values = [0, 0, 0, ]
+printing v after setting values = [3, 4, 8, ]
+printing w after setting values = [14, 13, 11, ]
+(*v).data[1] = 4
+dot product v and w = 182
+vector v and w are equal (1) or not (0): 0
+printing v before adding w = [3, 4, 8, ]
+printing v after adding w = [17, 17, 19, ]
+printing v after substracting w = [3, 4, 8, ]
+printing v after scaling with 5 = [15, 20, 40, ]
+printing v after zeroing values = [0, 0, 0, ]
+printing w after zeroing values = [0, 0, 0, ]
+vector v and w are equal (1) or not (0): 1
