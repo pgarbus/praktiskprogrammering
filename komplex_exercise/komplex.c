@@ -41,14 +41,14 @@ komplex komplex_conj(komplex z){
 	return result;
 }
 void komplex_print(char name[60], komplex z){
-	printf("%s = (%g, %g)\n", name, z.re,z.im);
+	printf("%s (%g,%g)\n", name, z.re,z.im);
 }
 void double_print(char name[60], double a){
-	printf("%s = %g\n",name, a);
+	printf("%s %g\n",name, a);
 }
 
 // int komplex_equal(komplex a, komplex b, double tau, double eps){
-// 	return equal(a.re,b.re,tau,eps) && equal(a.im,b.im,tau,eps);} // your equal function 
+// 	return equal(a.re<,b.re,tau,eps) && equal(a.im,b.im,tau,eps);} // your equal function 
 double komplex_abs(komplex z){
 	double a = fabs(z.re), b = fabs(z.im);
 	double result = sqrt(pow(a,2) + pow(b,2));

@@ -12,7 +12,7 @@ out.txt : main
 main : main.o nvector.o
 main.o nvector.o : nvector.h
 clean:
-	$(RM) out.txt main
+	$(RM) out.txt main *.o
 
 indent:
 	indent --linux-style *.c; rm -f *.c~
