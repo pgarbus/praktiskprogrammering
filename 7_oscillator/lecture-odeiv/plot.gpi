@@ -1,0 +1,5 @@
+set term postscript enhanced color
+set out "plot.ps"
+plot \
+ "data" using 1:2 with lines title "calculated" \
+,"data" using 1:3 with points title "exact" \
