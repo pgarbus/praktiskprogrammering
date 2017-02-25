@@ -1,0 +1,21 @@
+set terminal pdf
+set title "eigen-functions"
+set output "efuns.pdf"
+set xlabel "x"
+set ylabel "u(x)"
+set key right
+set tics out
+set xzeroaxis
+set yzeroaxis
+plot \
+ "data" using "x":"u0" with lines title "u_0" \
+,"data" using "x":"u1" with lines title "u_1" \
+,"data" using "x":"u2" with lines title "u_2"  
+set output "evals.pdf"
+set title "eigen-values"
+set xlabel "n"
+set ylabel "E_n"
+set key left
+plot \
+ "log" using "n":"calculated" with linespoints title "calculated" \
+,"log" using "n":"exact" with linespoints title "exact"  

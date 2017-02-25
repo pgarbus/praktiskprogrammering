@@ -1,7 +1,0 @@
-set term png
-set out "plot.png"
-set xlabel "x"
-set ylabel "f(x)"
-plot \
- "data" using "x":"J0" with lines title "J_0" \
-,"data" using "x":"J1" with lines title "J_1" 
