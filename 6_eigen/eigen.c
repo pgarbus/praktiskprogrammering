@@ -135,27 +135,91 @@
 /*
 	vector view of matrices
 */
-#include <math.h>
+// #include <math.h>
+// #include <stdio.h>
+// #include <gsl/gsl_matrix.h>
+// #include <gsl/gsl_blas.h>
+
+// int main (void){
+//   size_t i,j;
+//   gsl_matrix *m = gsl_matrix_alloc (10, 10);
+
+//   for (i = 0; i < 10; i++)
+//     for (j = 0; j < 10; j++)
+//       gsl_matrix_set (m, i, j, i + j); // sin (i) + cos (j));
+
+//   for (j = 0; j < 10; j++){
+//       gsl_vector_view column = gsl_matrix_column(m, j);
+//       double d;
+//       d = gsl_blas_dnrm2 (&column.vector);
+//       printf ("matrix column %zu, norm = %g\n", j, d);
+//   }
+
+//   gsl_matrix_free (m);
+
+//   return 0;
+// }
+
 #include <stdio.h>
-#include <gsl/gsl_matrix.h>
-#include <gsl/gsl_blas.h>
+#include <gsl/gsl_math.h>
+#include <gsl/gsl_eigen.h>
+#include <gsl/gsl_linalg.h>
 
-int main (void){
-  size_t i,j;
-  gsl_matrix *m = gsl_matrix_alloc (10, 10);
+int main(void)
+{
+  double data[] = 
+  {6.13,  -2.90,  5.86,   
+  8.08,   -6.31,  -3.89,  
+  -4.36,  1.00,   0.19};
 
-  for (i = 0; i < 10; i++)
-    for (j = 0; j < 10; j++)
-      gsl_matrix_set (m, i, j, i + j); // sin (i) + cos (j));
-
-  for (j = 0; j < 10; j++){
-      gsl_vector_view column = gsl_matrix_column(m, j);
-      double d;
-      d = gsl_blas_dnrm2 (&column.vector);
-      printf ("matrix column %zu, norm = %g\n", j, d);
+  double xyz[] = {6.23,5.37,2.29};
+ 
+  int array_size = sizeof(data)/sizeof(data[0]);
+  int dim = sqrt(array_size);
+ 
+  gsl_matrix* m = gsl_matrix_alloc(dim,dim);
+  for (int i = 0; i < dim; ++i)
+  {
+    printf("[");
+    for (int j = 0; j < dim; ++j)
+    {
+      gsl_matrix_set(m,i,j,data[i+j]);
+      printf("%5.3g\t", gsl_matrix_get(m,i,j));
+    }
+      printf("\b]\n");
+    }
+  
+  gsl_vector* b = gsl_vector_alloc(dim);
+  for (int i = 0; i < dim; ++i)
+  {
+    if (i==1)
+    {
+      printf("b = ");
+    }
+    gsl_vector_set(b,i,xyz[i]);
+    printf("\t[%5.3g]\n", gsl_vector_get(b,i));
   }
+  printf("\n");
 
-  gsl_matrix_free (m);
-
+  gsl_vector* x = gsl_vector_calloc(dim);
+  gsl_linalg_HH_solve(m, b, x);
+  for (int i = 0; i < dim; ++i)
+  {
+    if (i==1)
+    {
+      printf("x = ");
+    }
+    printf("\t[%5.3g]\n", gsl_vector_get(x,i));
+  }
+  printf("\n");
+  // printf('test%g/n',gsl_matrix_get(m,1,1));
+  // gsl_matrix_set(m,i,j,data[i+j]);
+  // gsl_matrix_set(m,i,j,data[i+j]);
+  // printf("%g\t", data[i++]);
+  // printf("%g\t", data[i++]);
+  // printf("%g\n", data[i++]);
+  gsl_vector_free(b);
+  gsl_vector_free(x);
+  gsl_matrix_free(m);
   return 0;
 }

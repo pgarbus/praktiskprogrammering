@@ -11,10 +11,10 @@ LDLIBS = $$(gsl-config --libs)
 # test.dat : eigen
 # 	./eigen
 
-all: eigen
-	./$<
+all: box eigen
+	./box
 # eigen : eigen.c
 
 .PHONEY: clean
 clean : 
-	$(RM) eigen *.txt *.dat
+	$(RM) eigen *.txt *.dat box
