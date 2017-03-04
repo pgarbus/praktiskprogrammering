@@ -1,20 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 	definition of a block and print its size and adress.
 */
@@ -165,8 +148,9 @@
 #include <gsl/gsl_eigen.h>
 #include <gsl/gsl_linalg.h>
 
-int main(void)
+int eigen(void)
 {
+  printf("WELCOME TO THE EIGEN EXERCISE:\n");
   double data[] = 
   {6.13,  -2.90,  5.86,   
   8.08,   -6.31,  -3.89,  
