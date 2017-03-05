@@ -1,4 +1,4 @@
-#ifndef HAVE_KOMPLEX_H /* this is necessary for multiple includes */
+#ifndef HAVE_KOMPLEX_H /* this is necessary to avoid multiple includes */
 
 struct komplex {double re; double im;};
 typedef struct komplex komplex;
