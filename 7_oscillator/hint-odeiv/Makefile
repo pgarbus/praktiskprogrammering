@@ -1,6 +1,8 @@
 CFLAGS = -Wall -std=gnu99
 CFLAGS += `gsl-config --cflags`
 LDLIBS += `gsl-config --libs`
+
+
 PLOTTER = gnuplot
 
 PLOTS = plot.png plot.jpeg plot.svg plot.pdf
