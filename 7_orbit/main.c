@@ -93,35 +93,6 @@ int main()
 			printf("%10.7g %10.7g %10.7g\n", phi,u[0],u[1]);
 		}
 		gsl_odeiv2_driver_free(orbit_driver);
-		/*
-		*/
-
-		/* Andreas Gas
-	    {
-	    printf("\n\n");
-	    double t=0.0;
-	    double hstart = 1e-3, epsabs =1e-6 , epsrel =1e-6 ;
-	    double params[3];
-	    double x;
-	    for(int i = 0; i<3; i++){
-	        scanf("%lg",&x);
-	        params[i]=x;}
-
-	    int dimension = 2;
-	    double epsilon = params[0], u[2] = {params[1],params[2]};
-	    double phi_min = 0, phi_max = 39.5/2 * M_PI, delta_phi = 0.05;
-	    gsl_odeiv2_system orbit = {orbit_func, NULL, dimension, &epsilon};
-	    gsl_odeiv2_driver *driver_orbit = gsl_odeiv2_driver_alloc_y_new(
-	        &orbit,gsl_odeiv2_step_rk8pd,hstart,epsabs,epsrel);
-
-	    for(double phi = phi_min; phi<phi_max;phi+=delta_phi){
-	        int status = gsl_odeiv2_driver_apply(driver_orbit,&t,phi,u);
-	        printf("%g %g\n",phi,u[0]);
-			if (status != GSL_SUCCESS) fprintf (stderr, "fun: status=%i", status);
-	    }
-	    gsl_odeiv2_driver_free(driver_orbit);}
-
-		*/
 	}
 	return 0;
 }
