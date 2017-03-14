@@ -32,10 +32,6 @@ double 	rosenbrock (const gsl_vector *start, void *params){
 
 int main(void)
 {
-	/*the iterator bookkeeper*/
-	size_t iter = 0;
-	/*returned status from gsl_fminimizer.*/
-	int status;
 	/* parameters to rosebrock function */
 	double par[2] = {1.0, 100.0};
 	/*dimension of parameter space*/
@@ -62,22 +58,36 @@ int main(void)
 	/*set the minimizer working space*/
 	gsl_multimin_fminimizer_set(working_space, &mini_rosen, start, step);
 
+	/*returned status from gsl_fminimizer.*/
+	int status;
+	/*iterator book keeper*/
+	size_t iter = 0;
+	/*parameter names for rosenbrok.out*/
+	fprintf(stdout, "%s %s %s %s %s\n", "iter","x","y","fval","size");
 	do{
 		iter++;
 		status = gsl_multimin_fminimizer_iterate(working_space);
 		if (status)
 			break;
 		double size = gsl_multimin_fminimizer_size (working_space);
-      	status = gsl_multimin_test_size (size, 1e-2);
+      	status = gsl_multimin_test_size (size, 1e-7);
 
 		if (status == GSL_SUCCESS)
-			printf("converged to minimum at:\n");
+			fprintf(stderr,"converged to minimum at:\n");
 
-		printf ("%5zu %10.3e %10.3e f() = %7.3f size = %.3f\n", 
+		fprintf(stdout,"%5zu %10.3e %10.3e %7.3e %.3e\n", 
 			iter,
 			gsl_vector_get (working_space->x, 0), 
 			gsl_vector_get (working_space->x, 1), 
-			working_space->fval, size);
+			working_space->fval, 
+			size);
+
+		fprintf(stderr,"%5zu %10.3e %10.3e f() = %7.3f size = %.3f\n", 
+			iter,
+			gsl_vector_get (working_space->x, 0), 
+			gsl_vector_get (working_space->x, 1), 
+			working_space->fval, 
+			size);
 	} while (status == GSL_CONTINUE && iter < 10000);
 
 	gsl_multimin_fminimizer_free(working_space);

@@ -1,0 +1,17 @@
+set terminal "pdf"
+set grid
+
+set output "decay.pdf"
+set xlabel "t"
+set ylabel "y(t)"
+plot "decay.out" using 1:2:3 with yerrorbars title "Measured data", \
+	"decay.out" using 1:4 with lines title "Fitted line"
+
+set output "rosenbrock.pdf"
+set xlabel "iteration"
+set ylabel "various variables"
+set yrange [-15:10]
+plot "rosenbrock.out" using "iter":"size" with lines title "size of simplex", \
+	"rosenbrock.out" using "iter":"x" with lines title "x-value", \
+	"rosenbrock.out" using "iter":"y" with lines title "y-value", \
+	"rosenbrock.out" using "iter":"fval" with lines title "value of Rosenbrock func", \
