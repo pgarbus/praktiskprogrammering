@@ -1,0 +1,8 @@
+set term pdf
+set out "plots.pdf"
+set xlabel "radius"
+set ylabel "radial wave function"
+set key right top
+plot \
+"data.out"  using 1:2 with points ps 0.2 title "Numerical Data" \
+, x*exp(-x) title "Analytical Function" 
