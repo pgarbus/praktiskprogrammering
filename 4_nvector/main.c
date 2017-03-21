@@ -1,11 +1,45 @@
 #include "nvector.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include <math.h>
+
+double* foo(){static double a[]={0,0,0}; return a; }
+double* bar(){double* b=(double*)malloc(3*sizeof(double)); return b;}
 
 int main()
 {
+	{
+		printf("\nQUESTION 6\n");
+		printf("If static in foo() is removed, the pointer to array vanishes.\n");
+		double* a=foo(); a[2]=1;
+		double* b=foo(); b[2]=2;
+		printf("a[2] = %g\n",a[2]);
+	}
+	{
+		printf("QUESTION 7\n");
+		printf("Malloc seems to already invoke static.\n"
+			"note malloc is void* wich takes in size_t types.\n"
+			"in function bar() the malloc is cast to double*");
+		double* b=bar(); b[2]=1;
+		double* c=bar(); c[2]=2;
+		printf("b[2] = %g\n",b[2]);
+		free(b);b=NULL;
+		free(c);c=NULL;
+	}
+	{
+		printf("QUESTION 10\n");
+		double (*f)(double) = sin;
+		double (*g)(double) = &sin;
+		printf("double (*f)(double) = sin; f(1) = %g \n"
+			"double (*g)(double) = &sin; g(1) = %g\n",f(1), g(1));
+		printf("Appereantly both notations are valid!\n");
+		double y = f(1);
+		double z = (*f)(1);
+		printf("f(1) = %g, (*f)(1) = %g\n", y,z);
+		printf("someone made sure these two calls behave the same...\n");
+	}
 	// Main FUNC is appearently not needed...
-	printf("Main.c is running just fine.\n");
+	printf("\nEXERCISE.\n");
 	nvector* v = nvector_alloc(3);
 	nvector* w = nvector_alloc(3);
 	nvector_print("printing v before setting values = ",v);

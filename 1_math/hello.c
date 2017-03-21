@@ -1,2 +1,2 @@
 #include <stdio.h>
-void hello(){printf("\nHello,World!\n");}
+void hello(){printf("\nHello,World!\n\n");}

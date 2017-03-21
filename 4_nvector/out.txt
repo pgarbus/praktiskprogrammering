@@ -1,5 +1,20 @@
+
+QUESTION 6
+If static in foo() is removed, the pointer to array vanishes.
+a[2] = 2
+QUESTION 7
+Malloc seems to already invoke static.
+note malloc is void* wich takes in size_t types.
+in function bar() the malloc is cast to double*b[2] = 1
+QUESTION 10
+double (*f)(double) = sin; f(1) = 0.841471 
+double (*g)(double) = &sin; g(1) = 0.841471
+Appereantly both notations are valid!
+f(1) = 0.841471, (*f)(1) = 0.841471
+someone made sure these two calls behave the same...
+
 Main.c is running just fine.
-printing v before setting values = [0, 0, 0, ]
+printing v before setting values = [0, 0, 1, ]
 printing v after setting values = [3, 4, 8, ]
 printing w after setting values = [14, 13, 11, ]
 (*v).data[1] = 4

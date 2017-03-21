@@ -14,29 +14,54 @@ int equal();
 
 
 
-int main(int argc, char const *argv[])
+int main(void)
 {
-	// exercise 1
-	// calc_int_max(); // do not call, take a long time to process
-	// calc_int_min(); // do not call, take a long time to process.
+	{ /*question 6*/
+		printf("question 6\n");
+		int i=1; 
+		printf("Initialize i = %i\n", i);
+		printf("%i the i++ is carried out after printf\n",i++); 
+		printf("%i the ++i is carried out before printf\n\n",++i);
+	}
+
+	{ /*question 7*/
+		printf("question 7\n");
+		int i=1; 
+		printf("Initialized i = %i. the next printf is with i++ and ++i\n", i);
+		printf("%i ++i already executed, i++ will be after this print. %i both i++ and ++i executed.\n",i++,++i);
+		printf("Another result can be obtained if the optimization -o option is applied in the Makefile.\n");
+	}
+
+	/*exercise 1*/
+	printf("\nEXERCISE 1: even with optimization -o the computation takes a long time\n");
+	printf("Finding the largest machine integer\n");
+	calc_int_max(); // do not call, take a long time to process
+
+	printf("\nFinding the smallest machine interger\n");
+	calc_int_min(); // do not call, take a long time to process.
+
+	printf("\nOn the machine epsilon and more\n");
 	epsilon_float();
 	epsilon_double();
 	epsilon_longdouble();
 	
 
-	// exercise 2 // result does not make sense... no difference.
+	// exercise 2 // .
+	printf("\nEXERCISE 2\n");
 	int max = INT_MAX/100;
 	sum_up_float(max);
 	sum_down_float(max);
 	
 	
 	// exercise 3
+	printf("\nEXERCISE 3\n");
 	double a = 1.0, b = 1.7, tau = TINY, epsilon = TINY; 
 	printf("long float of tau = %lg\n", tau);
 	int answer = equal(a,b,tau,epsilon); 
 	printf("answer from equal function = %i\n", answer);
 	return 0;
 }
+/*In C the helper functions do not need to be defined before the main function*/
 int equal(double a, double b, double tau, double epsilon){
 	double c = a-b; double d = fabs(a-b); double e = fabs(a)+fabs(b);
 	printf("c=%lg d=%lg e=%lg d/e=%lg d/e < epsilon/2 = %i\n",c, d, e, d/e, d/e < epsilon/2);

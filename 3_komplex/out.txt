@@ -1,2 +1,18 @@
+Question 6
+variable passed in, only a copy.i=1
+Pointer passed in, change 1-->0 takes effect.i=0
+pointer passed in, i becomes the NULL pointer.i=1
+In fact only the value of the pointer is sent to the function and not the pointer itself.
+ the function should be void f4(int **p){*p = NULL;}
+ and calling it with the address &-operator like f4(&&p).
+i = 1 was >>NOT<< a NULL pointer
+Somehow this is not true for my compiler...
+
+EXERCISE KOMPLEX:
 testing komplex_add...
-a+b actually =  (4, 6)
+komplex_add (1,2)
+komplex_add (3,4)
+a= (1,2)
+b= (3,4)
+a+b should be   (4,6)
+a+b actually is (4,6)
