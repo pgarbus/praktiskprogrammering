@@ -3,13 +3,13 @@ LDLIBS = -lm
 CC = clang
 SCRIPT = log.gpi
 FORMAT = pdf
-PLOTTER = pyxplot
 PLOTTER = gnuplot
 
 .PHONEY: all
 all: plot.$(FORMAT)
+	firefox $<
 
-plot.$(FORMAT) : out-stdio.dat out-cmdline.dat makefile
+plot.$(FORMAT) : out-stdio.dat out-cmdline.dat Makefile
 	echo 'set term $(FORMAT)' > $(SCRIPT)
 	echo 'set out "$@"' >> $(SCRIPT)
 	echo 'set key out' >> $(SCRIPT)
@@ -28,9 +28,10 @@ out-stdio.dat : in.dat main-stdio
 out-cmdline.dat : in.dat main-cmdline
 	./$(word 2,$^) `cat $<` > $@
 
-in.dat : makefile
-	cat /dev/null > $@
-	for x in `seq 0 0.2 10`; do echo $$x >> $@; done
+in.dat : Makefile
+	cat /dev/null > $@ # /dev/null is a black hole for linux based systems.
+	# used to clear content of a file.
+	for x in `seq 0 0.2 10`; do echo $$x >> $@; done # 
 
 .PHONEY: clean
 clean :

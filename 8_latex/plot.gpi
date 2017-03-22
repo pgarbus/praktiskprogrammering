@@ -1,7 +1,0 @@
-set term pdf
-set out 'plot.pdf'
-set size 0.6,0.6
-set tics out
-set xlabel 'x'
-set ylabel 'error value'
-plot 'data' using 1:2 with lines title 'error function'

@@ -1,0 +1,13 @@
+set term pdf
+set out 'plot.pdf'
+set size 0.6,0.6
+set tics out
+set key left top
+set xlabel 'x [{/Symbol p}]'
+set ylabel 'y'
+set xtics ("-1/8" -pi/8, "-1/4" -pi/4, "-3/8" -3*pi/8, "-1/2" -pi/2, "0" 0, "1/8" pi/8, "1/4" pi/4, "3/8" 3*pi/8, "1/2" pi/2)
+set xrange [-pi/2:pi/2]
+set yrange [-20:20]
+plot \
+"odeiv.out" using 1:2 with points title "ODEIV2 tan(x)", \
+"math_h_tan.out" using 1:2 with lines title "math.h tan(x)"

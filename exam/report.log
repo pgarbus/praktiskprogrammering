@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.25)  11 MAR 2017 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.25)  22 MAR 2017 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,71 +138,67 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 7.
 
-Underfull \hbox (badness 5189) in paragraph at lines 9--11
-\OT1/cmr/m/n/10 All cred-its goes to the good peo-ple edit-ing
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+\OT1/cmr/m/n/10 The web-site 'http://www.studytonight.com/c/
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 12--12
-[]\OT1/cmr/bx/n/14.4 If you re-mem-ber this for-
+Underfull \hbox (badness 1043) in paragraph at lines 15--16
+\OT1/cmr/m/n/10 mod-i-fiers (signed/unsigned/short/long). For the
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 15--16
+\OT1/cmr/m/n/10 float-type there are ad-di-tional dou-ble and long
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 14.
+(Font)              <7> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 14.
+(Font)              <5> on input line 21.
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
+Overfull \hbox (16.50056pt too wide) in paragraph at lines 21--29
+ [] 
  []
 
-Missing character: There is no â in font cmr10!
-Missing character: There is no ˆ in font cmr10!
-Missing character: There is no ’ in font cmr10!
-<plot.pdf, id=1, 361.35pt x 216.81pt>
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+<plot.pdf, id=10, 361.35pt x 216.81pt>
 File: plot.pdf Graphic file (type pdf)
  <use plot.pdf>
-Package pdftex.def Info: plot.pdf used on input line 33.
+Package pdftex.def Info: plot.pdf used on input line 72.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
-Overfull \hbox (131.84912pt too wide) in paragraph at lines 33--34
+Overfull \hbox (131.84912pt too wide) in paragraph at lines 72--73
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-] [2
-
- <./plot.pdf>]
-(./report.aux) ) 
+[2 <./plot.pdf>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1494 strings out of 494953
- 21236 string characters out of 6180977
- 78691 words of memory out of 5000000
- 4789 multiletter control sequences out of 15000+600000
- 7588 words of font info for 27 fonts, out of 8000000 for 9000
+ 1497 strings out of 494953
+ 21271 string characters out of 6180977
+ 78715 words of memory out of 5000000
+ 4793 multiletter control sequences out of 15000+600000
+ 7280 words of font info for 26 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,7n,23p,835b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb>
-Output written on report.pdf (2 pages, 128372 bytes).
+ 37i,7n,23p,937b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on report.pdf (2 pages, 113999 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

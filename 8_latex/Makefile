@@ -32,4 +32,4 @@ plot.gpi: Makefile
 .PHONEY: clean
 clean:
 	find . -type f -executable -delete
-	$(RM) *.txt plot.* data *.pdf
+	$(RM) *.txt plot.* data *.pdf *.log *.aux
